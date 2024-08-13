@@ -5,6 +5,7 @@ import { useAuth } from '../contexts/AuthContext.jsx';
 import ReviewForm from '../components/ReviewForm';
 import ReviewList from '../components/ReviewList';
 import MovieRecommendations from '../components/MovieRecommendations';
+import MovieTrailer from '../components/MovieTrailer';
 import './MovieDetails.css';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -88,6 +89,7 @@ function MovieDetails() {
                     <p className="movie-genres">{movie.genres.map(genre => genre.name).join(', ')}</p>
                     <h3>Overview</h3>
                     <p className="movie-overview">{movie.overview}</p>
+                    <MovieTrailer movieId={id} />
                     <h3>Cast</h3>
                     <div className="cast-list">
                         {movie.credits.cast.slice(0, 5).map(actor => (

@@ -1,82 +1,141 @@
-.movie-details {
-    padding: 20px;
-    max-width: 1000px;
+.movie-details-container {
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.movie-header {
+.movie-details-content {
     display: flex;
-    margin-bottom: 20px;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.movie-poster-container {
+    flex: 0 0 300px;
 }
 
 .movie-poster {
-    width: 300px;
-    height: auto;
-    margin-right: 20px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.movie-info {
+.movie-info-container {
     flex: 1;
+}
+
+.movie-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #343a40;
 }
 
 .movie-tagline {
     font-style: italic;
-    color: #666;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.movie-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+.movie-genres {
+    margin-bottom: 1rem;
+    color: #6c757d;
+}
+
+.movie-overview {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #495057;
 }
 
 .cast-list {
     display: flex;
+    gap: 1rem;
     overflow-x: auto;
-    margin-bottom: 20px;
+    padding-bottom: 1rem;
 }
 
 .cast-item {
-    margin-right: 20px;
     text-align: center;
+    min-width: 120px;
 }
 
 .cast-photo {
-    width: 100px;
-    height: 150px;
+    width: 120px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.actor-name {
+    font-weight: bold;
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 .character-name {
-    font-size: 14px;
-    color: #666;
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin: 0;
 }
 
 .streaming-providers {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .streaming-providers li {
     display: flex;
     align-items: center;
-    margin-right: 20px;
-    margin-bottom: 10px;
+    gap: 0.5rem;
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .provider-logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 
 .watchlist-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 .watchlist-btn:hover {
-    background-color: #45a049;
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .movie-details-content {
+        flex-direction: column;
+    }
+
+    .movie-poster-container {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 }
