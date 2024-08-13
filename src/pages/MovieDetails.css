@@ -1,24 +1,68 @@
 .movie-details {
     padding: 20px;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-.movie-details img {
-    max-width: 300px;
-    height: auto;
+.movie-header {
+    display: flex;
     margin-bottom: 20px;
 }
 
-.movie-details h2 {
-    margin-top: 30px;
+.movie-poster {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
 }
 
-.movie-details ul {
+.movie-info {
+    flex: 1;
+}
+
+.movie-tagline {
+    font-style: italic;
+    color: #666;
+}
+
+.cast-list {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.cast-item {
+    margin-right: 20px;
+    text-align: center;
+}
+
+.cast-photo {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.character-name {
+    font-size: 14px;
+    color: #666;
+}
+
+.streaming-providers {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.movie-details li {
+.streaming-providers li {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
     margin-bottom: 10px;
+}
+
+.provider-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }

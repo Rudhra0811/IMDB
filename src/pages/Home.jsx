@@ -3,7 +3,7 @@ import axios from 'axios';
 import MovieCard from '../components/MovieCard';
 import './Home.css';
 
-const API_KEY = 'YOUR_TMDB_API_KEY';
+const API_KEY = import.meta.env.VITE_API_KEY;
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 
 function Home() {

@@ -5,25 +5,24 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
-  }
-  
-  .movie-card:hover {
+}
+
+.movie-card:hover {
     transform: scale(1.05);
-  }
-  
-  .movie-card img {
+}
+
+.movie-card img {
     width: 100%;
     height: auto;
-  }
-  
-  .movie-card h3 {
+}
+
+.movie-card h3 {
     margin: 10px 0;
     font-size: 18px;
-  }
-  
-  .movie-card p {
+}
+
+.movie-card p {
     margin: 0 0 10px;
     font-size: 14px;
     color: #666;
-  }
-  
+}
