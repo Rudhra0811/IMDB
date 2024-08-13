@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext.jsx';
+import ReviewForm from '../components/ReviewForm';
+import ReviewList from '../components/ReviewList';
 import './MovieDetails.css';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -13,6 +15,7 @@ function MovieDetails() {
     const [streamingProviders, setStreamingProviders] = useState([]);
     const { currentUser } = useAuth();
     const [isInWatchlist, setIsInWatchlist] = useState(false);
+    const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
         const fetchMovieDetails = async () => {
@@ -33,8 +36,17 @@ function MovieDetails() {
             setIsInWatchlist(storedWatchlist.some(item => item.id === parseInt(id)));
         }
 
+        const storedReviews = JSON.parse(localStorage.getItem(`reviews_${id}`) || '[]');
+        setReviews(storedReviews);
+
         fetchMovieDetails();
     }, [id, currentUser]);
+
+    const handleReviewSubmit = (newReview) => {
+        const updatedReviews = [newReview, ...reviews];
+        setReviews(updatedReviews);
+        localStorage.setItem(`reviews_${id}`, JSON.stringify(updatedReviews));
+    };
 
     const toggleWatchlist = () => {
         if (!currentUser) return;
@@ -113,6 +125,8 @@ function MovieDetails() {
                     )}
                 </div>
             </div>
+            <ReviewForm movieId={id} onReviewSubmit={handleReviewSubmit} />
+            <ReviewList reviews={reviews} />
         </div>
     );
 }
