@@ -23,9 +23,36 @@ const UserProfile = () => {
 
     return (
         <div className="user-profile">
-            <h1>Welcome, {currentUser.username}!</h1>
-            <PersonalizedRecommendations />
-            {/* Rest of the component remains the same */}
+            <div className="user-profile">
+                <h1>Welcome, {currentUser.username}!</h1>
+                <PersonalizedRecommendations />
+                <div className="profile-section">
+                    <h2>Your Watchlist</h2>
+                    {watchlist.length > 0 ? (
+                        <ul className="watchlist-preview">
+                            {watchlist.slice(0, 5).map(movie => (
+                                <li key={movie.id}>{movie.title}</li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>Your watchlist is empty.</p>
+                    )}
+                </div>
+                <div className="profile-section">
+                    <h2>Your Reviews</h2>
+                    {reviews.length > 0 ? (
+                        <ul className="reviews-preview">
+                            {reviews.slice(0, 5).map((review, index) => (
+                                <li key={index}>
+                                    <strong>{review.movieTitle}</strong>: {review.rating}/5 - {review.text.slice(0, 50)}...
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>You haven't written any reviews yet.</p>
+                    )}
+                </div>
+            </div>
         </div>
     );
 };

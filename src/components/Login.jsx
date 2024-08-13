@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext.jsx';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 import './Login.css';
 
 function Login() {
@@ -12,7 +12,7 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
         login(username, password);
-        navigate('/profile'); // Redirect to profile page after login
+        navigate('/');
     };
 
     return (

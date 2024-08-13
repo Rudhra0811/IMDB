@@ -7,6 +7,7 @@ import MovieDetails from './pages/MovieDetails';
 import Login from './components/Login';
 import Watchlist from './components/Watchlist';
 import UserProfile from './pages/UserProfile';
+import SearchResults from './pages/SearchResults';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/watchlist" element={<Watchlist />} />
             <Route path="/profile" element={<UserProfile />} />
+            <Route path="/search" element={<SearchResults />} />
           </Routes>
         </div>
       </Router>
