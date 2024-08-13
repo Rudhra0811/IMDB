@@ -1,3 +1,4 @@
+// src/components/SimilarMovies.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -8,9 +9,12 @@ const API_BASE_URL = 'https://api.themoviedb.org/3';
 
 const SimilarMovies = ({ movieId }) => {
     const [similarMovies, setSimilarMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchSimilarMovies = async () => {
+            setLoading(true);
             try {
                 const response = await axios.get(`${API_BASE_URL}/movie/${movieId}/similar`, {
                     params: {
@@ -19,15 +23,21 @@ const SimilarMovies = ({ movieId }) => {
                         page: 1
                     }
                 });
-                setSimilarMovies(response.data.results.slice(0, 6)); // Limit to 6 similar movies
+                setSimilarMovies(response.data.results.slice(0, 6));
+                setError(null);
             } catch (error) {
                 console.error('Error fetching similar movies:', error);
+                setError('Failed to load similar movies');
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchSimilarMovies();
     }, [movieId]);
 
+    if (loading) return <div className="loading">Loading similar movies...</div>;
+    if (error) return <div className="error">{error}</div>;
     if (similarMovies.length === 0) return null;
 
     return (

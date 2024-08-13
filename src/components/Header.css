@@ -1,7 +1,7 @@
-.header {
+/* .header {
     background-color: #282c34;
     padding: 20px 0;
-}
+} */
 
 .container {
     max-width: 1200px;
@@ -17,7 +17,7 @@
     text-decoration: none;
 }
 
-nav ul {
+/* nav ul {
     list-style-type: none;
     padding: 0;
 }
@@ -29,5 +29,27 @@ nav ul li {
 
 nav ul li a {
     color: white;
+    text-decoration: none; */
+/* } */
+
+header {
+    background-color: var(--primary-color);
+    color: var(--header-color);
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--header-color);
     text-decoration: none;
+    font-weight: bold;
 }
