@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { AuthProvider } from './contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthContext.jsx';
 import Header from './components/Header';
 import Home from './pages/Home';
 import MovieDetails from './pages/MovieDetails';
 import Login from './components/Login';
 import Watchlist from './components/Watchlist';
+import UserProfile from './pages/UserProfile';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/movie/:id" element={<MovieDetails />} />
             <Route path="/login" element={<Login />} />
             <Route path="/watchlist" element={<Watchlist />} />
+            <Route path="/profile" element={<UserProfile />} />
           </Routes>
         </div>
       </Router>

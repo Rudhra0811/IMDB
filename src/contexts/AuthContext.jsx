@@ -1,4 +1,3 @@
-// src/contexts/AuthContext.jsx
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const AuthContext = createContext();
@@ -18,7 +17,7 @@ export function AuthProvider({ children }) {
     }, []);
 
     const login = (username, password) => {
-        const user = { id: 1, username };
+        const user = { id: Date.now(), username };
         setCurrentUser(user);
         localStorage.setItem('user', JSON.stringify(user));
     };
