@@ -6,6 +6,7 @@ import ReviewForm from '../components/ReviewForm';
 import ReviewList from '../components/ReviewList';
 import MovieRecommendations from '../components/MovieRecommendations';
 import MovieTrailer from '../components/MovieTrailer';
+import SimilarMovies from '../components/SimilarMovies';
 import './MovieDetails.css';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -131,6 +132,7 @@ function MovieDetails() {
             <ReviewForm movieId={id} onReviewSubmit={handleReviewSubmit} />
             <ReviewList reviews={reviews} />
             <MovieRecommendations movieId={id} />
+            <SimilarMovies movieId={id} />
         </div>
     );
 }

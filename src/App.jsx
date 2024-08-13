@@ -7,7 +7,7 @@ import MovieDetails from './pages/MovieDetails';
 import Login from './components/Login';
 import Watchlist from './components/Watchlist';
 import UserProfile from './pages/UserProfile';
-import SearchResults from './pages/SearchResults';
+import SearchResults from './pages/SearchResults.jsx';
 import './App.css';
 
 function App() {

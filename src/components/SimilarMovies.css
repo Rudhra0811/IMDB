@@ -1,0 +1,35 @@
+.similar-movies {
+    margin-top: 2rem;
+}
+
+.similar-movies h3 {
+    margin-bottom: 1rem;
+}
+
+.similar-movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.similar-movie-item {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.similar-movie-item:hover {
+    transform: scale(1.05);
+}
+
+.similar-movie-item img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.similar-movie-item p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
