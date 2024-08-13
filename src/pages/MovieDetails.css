@@ -1,0 +1,24 @@
+.movie-details {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.movie-details img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.movie-details h2 {
+    margin-top: 30px;
+}
+
+.movie-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.movie-details li {
+    margin-bottom: 10px;
+}
