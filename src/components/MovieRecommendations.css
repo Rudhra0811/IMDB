@@ -1,0 +1,30 @@
+.movie-recommendations {
+    margin-top: 40px;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.recommendation-item {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.recommendation-item img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.recommendation-item:hover img {
+    transform: scale(1.05);
+}
+
+.recommendation-item p {
+    margin-top: 8px;
+    font-size: 14px;
+}

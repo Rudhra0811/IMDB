@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext.jsx';
 import ReviewForm from '../components/ReviewForm';
 import ReviewList from '../components/ReviewList';
+import MovieRecommendations from '../components/MovieRecommendations';
 import './MovieDetails.css';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -127,6 +128,7 @@ function MovieDetails() {
             </div>
             <ReviewForm movieId={id} onReviewSubmit={handleReviewSubmit} />
             <ReviewList reviews={reviews} />
+            <MovieRecommendations movieId={id} />
         </div>
     );
 }
